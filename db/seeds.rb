@@ -7,5 +7,5 @@
  p = Product.find_or_create_by!(code:"PPP444", short_description:"Bebida", long_description: "Gaseosa Cola", 
  	unit_amount: 10, stock:2)
  Item.create!(status:0, product: p)
- Item.create!(status:0, product: p)
+ Item.create!(status:0, product: p) 
 
