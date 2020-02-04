@@ -3,6 +3,9 @@ require 'minitest/autorun'
 require 'minitest/spec'
 
 class ProductsControllerTests < ActionDispatch::IntegrationTest
+	before do
+		
+	end
  	test "All - should pass" do
 		get 'http://localhost:3000/products/all'
 		assert_response :success
