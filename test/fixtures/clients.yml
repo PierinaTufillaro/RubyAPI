@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  cuit_cuil: "123456"
+  name: "Pierina"
+  email: test@mail.com
+  iva_cond: 1
+
+
+two:
+  id: 2
+  cuit_cuil: "7891011"
+  name: "Joaquin"
+  email: joaquin@mail.com
+  iva_cond: 1

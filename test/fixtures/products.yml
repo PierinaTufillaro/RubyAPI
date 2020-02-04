@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  code: PPP111
+  short_description: Agua
+  long_description: Agua Kin
+  unit_amount: 10
+
+
+two:
+  id: 2
+  code: PPP222
+  short_description: Gaseosa
+  long_description: Gaseosa Cola
+  unit_amount: 10
