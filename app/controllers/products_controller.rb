@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-	wrap_parameters :product, include: [:code, :stock]
 	before_action :validate_user
 	
 	def all
@@ -16,8 +15,8 @@ class ProductsController < ApplicationController
 
 	def in_stock
 		@products = Product.where("stock > ?", 0).limit(25)
- 		render json: params[:company]
-		#render json: ProductSerializer.new(@products)
+ 	
+		render json: ProductSerializer.new(@products)
 	end
 
 
@@ -52,6 +51,8 @@ class ProductsController < ApplicationController
 		else		
 			for i in (1..@items.to_i)
 				Item.create(product_id:@product.id, status:0)
+				stock = @product.stock
+				@product.update(stock: stock + 1)
 			end
 			@respuesta = "OK"
 			render json: @respuesta
@@ -59,7 +60,7 @@ class ProductsController < ApplicationController
 	end
 	
 	def validate_user
-    	@user = User.find_by(authentication_token: params[:token].to_s)
+    	@user = User.find_by(authentication_token: request.headers["Authorization"])
     	user = @user
     	if @user.blank?  
     		render :status => 401
@@ -67,6 +68,7 @@ class ProductsController < ApplicationController
     		@user.update(token_created_at: nil, authentication_token: "blank")
     		render :status => 401
     	end
+    	#render json: request.headers["Authorization"]
     end
 end
 

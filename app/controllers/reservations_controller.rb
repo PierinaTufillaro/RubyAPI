@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-	#before_action :validate_user
+	before_action :validate_user
 
 	def all
 		@reservations = Reservation.joins(:client).select(:id, :created_at, :name).where(sold: false)
@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
 	end
 
 	def createOne
-		user_id = params[:user_id]
+		user_id = @user.id
 		client_id = params[:client_id]
 		products = params[:products]
 		total_a = 0
@@ -97,7 +97,7 @@ class ReservationsController < ApplicationController
 	end
 
 	def validate_user
-    	@user = User.find_by(authentication_token: params[:token].to_s)
+    	@user = User.find_by(authentication_token: request.headers["Authorization"])
     	user = @user
     	if @user.blank?  
     		render :status => 401
