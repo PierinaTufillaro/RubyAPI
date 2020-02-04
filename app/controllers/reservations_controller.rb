@@ -52,7 +52,7 @@ class ReservationsController < ApplicationController
 			res = Reservation.create(user_id: user_id, client_id: client_id, total_amount: total_a)
 			for i in products
 				prod = Product.find_by(code: i["code"])
-				items = Item.where(product_id: prod.id, status: 0).limit(i["cant"]).update(status: 1, reservation_id: res.id)
+				items = Item.where(product_id: prod.id, status: 0).limit(i["cant"]).update(status: 1, reservation_id: res.id, amount: prod.unit_amount)
 				items.map { |each| total_a = total_a + each.amount  }
 				stock_act = prod.stock 
 				prod.update(stock: stock_act - i["cant"])

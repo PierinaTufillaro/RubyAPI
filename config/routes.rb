@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/users', to: 'session#createUser'
 
   #Session 
-  post '/session', to: 'session#create'
-  delete '/session', to: 'session#delete'
+  post '/sessions', to: 'session#create'
+  delete '/sessions', to: 'session#delete'
   
   #Products
   get '/products/all', to: 'products#all'
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   #Sells
   get '/sells', to: 'sells#all'
   get '/sells/:id', to: 'sells#searchOne'
+  post '/sells', to: 'sells#createOne'
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
