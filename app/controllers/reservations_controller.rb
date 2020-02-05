@@ -88,9 +88,9 @@ class ReservationsController < ApplicationController
 			@items = Item.where(reservation_id: @reservation.id)
 			@items.map do 
 				|each| each.update(reservation_id: nil, status: 0)
-				@pr = Product.where(id: each.product_id)
-				stock_p = @pr.stock
-				@pr.update(stock: stock_p +1)
+				pr = Product.find_by(id: each.product_id)
+				stock_new = pr.stock + 1
+				pr.update(stock: stock_new)
 			end
 			@reservation.delete
 		end
