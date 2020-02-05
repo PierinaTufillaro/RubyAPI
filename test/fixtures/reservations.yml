@@ -17,5 +17,5 @@ two:
   sold: false
   total_amount: 20
   client_id: 2
-  user_id: 2
+  user_id: 3
 # column: value

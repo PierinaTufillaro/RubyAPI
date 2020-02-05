@@ -9,3 +9,10 @@ two:
   id: 2
   email: Joaquin@mail.com
   encrypted_password: 12345678
+
+pedro:
+  id: 3
+  email: Pedro@mail.com
+  encrypted_password: 12345678
+  authentication_token: <%= Devise.friendly_token %>
+  token_created_at: <%= Time.now %>

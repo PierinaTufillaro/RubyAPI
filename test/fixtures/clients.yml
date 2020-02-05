@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
+  id: 3
   cuit_cuil: "123456"
   name: "Pierina"
   email: test@mail.com

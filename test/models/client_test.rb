@@ -23,11 +23,11 @@ describe Client do
 		end
 		it "should fail - the cuit_cuil exists" do
 			assert_equal(["Cuit cuil has already been taken"], 
-			Client.create(cuit_cuil:"123456",name:"Jose",email:"testing98@mail.com",iva_cond:1).errors.full_messages)
+			Client.create(cuit_cuil:"123456",name:"Jose",email:"nuevo_email98@mail.com",iva_cond:1).errors.full_messages)
 		end
 		it "should fail - the email exists" do
 			assert_equal(["Email has already been taken"], 
-			Client.create(cuit_cuil:"999999/6",name:"Jose",email:"test@mail.com",iva_cond:1).errors.full_messages)
+			Client.create(cuit_cuil:"99900/6",name:"Jose",email:"test@mail.com",iva_cond:1).errors.full_messages)
 		end
 		#it "should fail - the client has no phone" do 
 		#	

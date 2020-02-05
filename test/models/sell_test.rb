@@ -9,7 +9,7 @@ describe Sell do
 		end
 		it "should fail - the user_id is blank" do 
 			assert_equal(["User must exist"], 
-			Sell.create(client_id: 1).errors.full_messages)
+			Sell.create(client_id: 3).errors.full_messages)
 		end
 		it "should fail - the client not exists" do 
 			assert_equal(["Client must exist"], 
@@ -21,11 +21,11 @@ describe Sell do
 		end
 		it "should pass - everything is OK (not contains a reservation)" do
 			assert_equal(true, 
-			Sell.create(client_id: 1, user_id: 2).valid?)
+			Sell.create(client_id: 3, user_id: 2).valid?)
 		end
 		it "should pass - everything is OK (contains an existing reservation)" do
 			assert_equal(true, 
-			Sell.create(client_id: 1, user_id: 1, reservation_id: 1).valid?)
+			Sell.create(client_id: 3, user_id: 1, reservation_id: 1).valid?)
 		end
 	end
 end

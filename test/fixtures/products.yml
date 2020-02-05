@@ -6,6 +6,7 @@ one:
   short_description: Agua
   long_description: Agua Kin
   unit_amount: 10
+  stock: 0
 
 
 two:
@@ -14,3 +15,4 @@ two:
   short_description: Gaseosa
   long_description: Gaseosa Cola
   unit_amount: 10
+  stock: 0
