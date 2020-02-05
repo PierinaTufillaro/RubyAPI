@@ -1,2 +1,2 @@
-class PhonesController < ApplicationController
+class PhonesController < ApplicationController 
 end
