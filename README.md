@@ -1,7 +1,38 @@
 # Inventory-API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :package: Requirements
+
+1. Install ruby 2.5.7 o posterior
+2. Install Ruby on Rails
+
+## :package:Endpoints which doesn't requires token
+### Users 
+   - **POST /users** Creates a new user. You have to send an email and a password through the body of the petition.
+
+### Session
+   - **POST /sessions** Creates a new session. You have to send an existing email and the correspondent password for            that email through the body of the petition. If the data is correct, you'll receive a token through the header of the        petition.
+  
+## :package: Endpoints which require token
+### Session
+  - **DEL  /sessions** Delate the actual session.
+
+### Products
+  - **GET  /products/all** 
+  
+  - **GET  /products/scarce**
+  
+  - **GET  /products** Returns all the products which stock is more than zero.
+  
+  - **GET  /products/:codigo** Return the product with the code send through the URL. You have to send an existing product's   code through the URL.
+  
+  - **GET  /products/:codigo/items** Return all the items associated with the product's code sent. You have to send an         existing product's code through the URL.
+  
+  - **POST /products/:codigo/items** Creates items for the product identified by the code received through the code             parameter. The body of the petition receive the quantity of items to create.
+  
+  Crea ítems para el producto identificado por el código recibido en el parámetro codigo .
+En el cuerpo de la petición se recibe la cantidad de ítems a crear, que debe ser mayor que
+cero. Los ítems creados se generan en estado disponible
+
 
 Things you may want to cover:
 
