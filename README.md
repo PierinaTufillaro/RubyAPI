@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# README
+**Inventory-API**
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# RubyAPI
->>>>>>> 3f3a52c39b503688c45ef3baed402ac3b93cc15e
