@@ -1,4 +1,4 @@
-# :package: Inventory-API :package:
+# :package: InventoryAPI :package:
    API created to keep track of the inventory of your bussiness. You can register products, items, sells, reservations, clients data and diferent users. 
 
    For those endpoints that requires a token, you must create a new session that will create a new token. You have to pass that token through the header parameter named 'Authorization' on every endpoint that require a token. For security, sessions last 40 minutes. After that time you have to sing in again.
