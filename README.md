@@ -2,7 +2,7 @@
 
 ## :package: Requirements
 
-1. Install ruby 2.5.7 o posterior
+1. Install ruby 2.5.7
 2. Install Ruby on Rails
 
 ## :package:Endpoints which doesn't requires token
@@ -17,21 +17,19 @@
   - **DEL  /sessions** Delate the actual session.
 
 ### Products
-  - **GET  /products/all** 
+  - **GET  /products/all** Return all the products.
   
-  - **GET  /products/scarce**
+  - **GET  /products/scarce** Return all the products which stock is between one and five.
   
   - **GET  /products** Returns all the products which stock is more than zero.
   
-  - **GET  /products/:codigo** Return the product with the code send through the URL. You have to send an existing product's   code through the URL.
+  - **GET  /products/:codigo** Return all the information of the product which code is the same that the one sent through the URL. You have to send an existing product's code through the URL. If the product's code sent doesn't exist, then you'll receive an HTTP Status 404 'Not found'.
   
-  - **GET  /products/:codigo/items** Return all the items associated with the product's code sent. You have to send an         existing product's code through the URL.
+  - **GET  /products/:codigo/items** Return all the items associated with the product's code sent. You have to send an         existing product's code through the URL. If the product's code sent doesn't exist, then you'll receive an HTTP Status 404 'Not found'.
   
-  - **POST /products/:codigo/items** Creates items for the product identified by the code received through the code             parameter. The body of the petition receive the quantity of items to create.
+  - **POST /products/:codigo/items** Creates items for the product identified by the code received through the code             parameter. The body of the petition receive the quantity of items to create. (The quantity must be more than zero). All the new item's status will be 'available'.
   
-  Crea ítems para el producto identificado por el código recibido en el parámetro codigo .
-En el cuerpo de la petición se recibe la cantidad de ítems a crear, que debe ser mayor que
-cero. Los ítems creados se generan en estado disponible
+
 
 
 Things you may want to cover:
